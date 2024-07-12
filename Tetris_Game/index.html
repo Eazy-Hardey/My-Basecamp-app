@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tetris</title>
+        <link href="style.css" rel="stylesheet"/>
+    </head>
+    <body>
+
+        <div>
+            <canvas id="main-game-canvas" width="200" height="400" style="border:2px solid black;"></canvas>
+            
+            <canvas id="second-canvas" width="80" height="80" style="border:1px solid black;"></canvas>
+            <img src="tetris control.png">
+
+        </div>
+        
+        <button id="start-button">PLAY</button>
+        <button id="pause-button" disabled>PAUSE</button>
+        <div style="border:2px solid black; width:20%; padding: 15px; margin: 5px 0px;">
+            <h3>score:<div id="score">0</div></h3>   
+            <h3>lines:<div id="line">0</div></h3> 
+            <h3>level:<div id="level">0</div></h3> 
+        </div>
+
+        <script src="./my_tetris.js"></script>
+
+    </body>
+</html>

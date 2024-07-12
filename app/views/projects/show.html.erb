@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+<p style="color: green"><%= notice %></p>
+<%= render @project %>
+
+<div class="d-flex mt-2 gap-3">
+  <%= link_to edit_project_path(@project) do%>
+    <%= image_tag("edit.png", class: "img-fluid", style: "width: 20px; height: 20px; border-radius: 1rem; object-fit: cover; margin-right: 10px;") %>
+  <%end%>
+  <%= button_to @project, method: :delete do%>
+    <%= image_tag("delete.png", class: "img-fluid", style: "width: 20px; height: 20px; border-radius: 1rem; object-fit: cover; margin-right: 10px;") %>
+  <%end%>
+  <%= link_to "Back to projects", projects_path %>
+</div>
+<style>
+  button{
+    border: none;
+  }
+  a{
+    text-decoration: none;
+    font-weight: 600;
+    color: grey;
+  }
+</style>
+</body>
+</html>

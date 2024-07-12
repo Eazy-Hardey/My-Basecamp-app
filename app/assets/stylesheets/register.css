@@ -1,0 +1,24 @@
+.form_container{
+  width: 90vw;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.form{
+  
+}
+.form .actions{
+  margin-top: 5px;
+}
+.form .actions input{
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+}
+.image_area{
+  
+}
