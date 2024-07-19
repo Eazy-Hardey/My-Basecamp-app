@@ -9,7 +9,7 @@ In summary, you should be able to create a new user, delete a user, and as a new
 Session - User #sign_in - User #sign_out
 Users should be able to log in and log out.
 
-Role Permission - User setAdmin - User removeAdmin
+Role Permission ---- User setAdmin - User removeAdmin
 This means you will have two types of permissions, someone who is a user, and someone who is a user and an admin. We want the ability to also remove the admin permission from a user.
 
 Project - Project #new - Project #show - Project #edit - Project #destroy
