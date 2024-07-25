@@ -1,0 +1,49 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Edit project</h2>
+
+<%= render "form", project: @project %>
+
+<br>
+
+<div class="bottom_links">
+  <%= link_to "Show this project", @project %> |
+  <%= link_to "Back to projects", projects_path %>
+</div>
+<style>
+  .bottom_links a{
+    text-decoration: none;
+    color: white;
+    border: 1px solid grey;
+    padding: 4px;
+    background-color: green;
+    border: none;
+    transition: all;
+    transition-timing-function: ease;
+    transition-duration: 400ms;
+  }
+  .bottom_links a:nth-child(2){
+    background-color: blue;
+  }
+  .bottom_links a:nth-child(2):hover{
+    background-color: white;
+    border: 1px solid blue;
+    color: blue;
+  }
+  .bottom_links a:nth-child(1):hover{
+    background-color: white;
+    border: 1px solid green;
+    color: green;
+  }
+   .bottom_links a:hover{
+    color: blue;
+   }
+   /* button{
+    margin-top: 10px;
+    border: none;
+   } */
+</style>
+</body>
+</html>

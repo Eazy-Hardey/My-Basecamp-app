@@ -1,0 +1,31 @@
+<html>
+<head>
+<%=stylesheet_link_tag "project"%>
+</head>
+<body>
+
+<div id="container">
+<div class="top">
+<h3>
+    <strong>Title:</strong>
+    <%= project.title %>
+  </h3>
+</div>
+<div class="middle">
+<p>
+    <strong>Duration:</strong>
+    <%= project.duration %>
+  </p>
+</div>
+<div class="bottom">
+<p>
+    <strong>Objective:</strong>
+    <%= project.objective %>
+  </p>
+</div>
+ <%= link_to project do%>
+ <%= image_tag("searchw.png", class: "img-fluid", style: "width: 20px; height: 20px; border-radius: 1rem; object-fit: cover") %>
+ <% end %>
+</div>
+</body>
+</html>
