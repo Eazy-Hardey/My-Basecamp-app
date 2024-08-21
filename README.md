@@ -15,11 +15,26 @@ Basecamp is a web-based project management tool launched in 2004. Its primary fe
 In this project, you'll create a website that mimics features from the original Basecamp tool. This will involve creating a database, backend, and frontend to allow users to create accounts, log in, and manage projects.
 As developer you need to think about the User Experience and it needs to be great.
 ## Installation
-we need to install node.js
-we install yearn 
-install git bash 
-vs code 
-ruby on rails
+Download and Install Ruby
+   Visit the [RubyInstaller website](https://rubyinstaller.org/downloads/) and download the recommended version.
+   During installation, check the box for "MSYS2 development toolchain" to install necessary development tools.
+Install Rails
+Open Command Prompt and install Rails by running:
+gem install rails
+Clone the Project Repository
+   Open Command Prompt and navigate to the directory where you want to clone the project:
+     Navigate to the Project Directory
+     Ensure all necessary gems are installed
+     Install JavaScript Dependencies
+     
+     ## Prerequisites
+
+- [Ruby](https://rubyinstaller.org/downloads/) (version 3.3.x recommended)
+- [Rails](https://rubyonrails.org/) (version 7.x.x)
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) and npm
+- [SQLite3](https://www.sqlite.org/download.html) (for the default database)
+
 ## Usage
 The application enables the following functionalities:
 create a new user, delete a user, and as a new user, create an account yourself.
