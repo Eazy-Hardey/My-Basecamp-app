@@ -31,5 +31,9 @@ This means you will have two types of permissions, someone who is a user, and so
 Project - Project #new - Project #show - Project #edit - Project #destroy
 Similar to the real Basecamp, users should be able to create, edit, and destroy a project.
 ### The Core Team
+1. Ezekiel elijah - elijah-a_e
+2. odewande ezekiel_o
+
+
 <span><i>Made at <a href='https://qwasar.io'>Qwasar SV -- Software Engineering School</a></i></span>
-<span><img alt='Qwasar SV -- Software Engineering School's Logo' src='https://storage.googleapis.com/qwasar-public/qwasar-logo_50x50.png' width='20px' /></span>
+<span><img alt='Qwasar SV -- Software Engineering Schools Logo' src='https://storage.googleapis.com/qwasar-public/qwasar-logo_50x50.png' width='20px' /></span>
