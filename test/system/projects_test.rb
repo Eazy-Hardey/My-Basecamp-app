@@ -14,9 +14,8 @@ class ProjectsTest < ApplicationSystemTestCase
     visit projects_url
     click_on "New project"
 
-    fill_in "Duration", with: @project.duration
-    fill_in "Objective", with: @project.objective
-    fill_in "Title", with: @project.title
+    fill_in "Project discription", with: @project.project_discription
+    fill_in "Project name", with: @project.project_name
     click_on "Create Project"
 
     assert_text "Project was successfully created"
@@ -27,9 +26,8 @@ class ProjectsTest < ApplicationSystemTestCase
     visit project_url(@project)
     click_on "Edit this project", match: :first
 
-    fill_in "Duration", with: @project.duration
-    fill_in "Objective", with: @project.objective
-    fill_in "Title", with: @project.title
+    fill_in "Project discription", with: @project.project_discription
+    fill_in "Project name", with: @project.project_name
     click_on "Update Project"
 
     assert_text "Project was successfully updated"

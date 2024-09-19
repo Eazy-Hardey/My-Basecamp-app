@@ -1,5 +1,3 @@
-<html>
-<body>
 <%= form_with(model: project) do |form| %>
   <% if project.errors.any? %>
     <div style="color: red">
@@ -13,26 +11,32 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="field form-group">
+
+      <%= form.label :project_name, style: "display: block" %>
+      <%= form.text_field :project_name %>
+
+  </div>
+   
+  <div class="field form-group">
+
+      <%= form.label :project_discription, style: "display: block" %>
+      <%= form.text_area :project_discription,class:"form-control",placeholder:"project_discription" %>
+
   </div>
 
+  <div class="field form-group">
+
+       <%= form.number_field :user_id, id: :project_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+     
+        </div>
+
+
+
+        <br>
+
   <div>
-    <%= form.label :duration, style: "display: block" %>
-    <%= form.text_field :duration %>
+      <%= form.submit class:'btn btn-secondary' %>
   </div>
 
-  <div class="a_form">
-    <%= form.label :objective, style: "display: block" %>
-    <%= form.text_field :objective %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>
-<style>
-</style>
-</body>
-</html>

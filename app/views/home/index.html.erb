@@ -1,20 +1,16 @@
-<!Doctype html>
-<html>
-<head>
-<%=stylesheet_link_tag "home"%>
-</head>
-<body>
-<div class="d-flex flex-column align-items-center justify-content-center">
-         <%= image_tag("camp.png", class: "img-fluid", style: "width: 600px; height: 350px; border-radius: 1rem; object-fit: contain") %>
-<div class="sm mb-3">
-<h1 class="text-center"><b>My Basecamp</b></h1>
-<p>A project management tool for developers</p>
-       
-</div>
-        <div class="nav-item d-flex gap-3 musa">
-                <%= link_to "log in", new_user_session_path, class:"nav-link border border-1"%>
-                <%= link_to "sign up", new_user_registration_path, class:"nav-link border border-1"%>
-        </div>
-</div>
-</body>
-</html>
+
+
+<% if user_signed_in? && current_user.admin? %>
+  <ul>
+    <% @users.each do |user| %>
+      <li>
+        <%= user.email %>
+        <% unless user.admin? %>
+          <%= link_to 'Make Admin', set_admin_user_path(user), data: {turbo_method: :patch} %>
+        <% else %>
+          <%= link_to 'Remove Admin', remove_admin_user_path(user), data: {turbo_method: :patch} %>
+        <% end %>
+      </li>
+    <% end %>
+ </ul>
+<% end %>

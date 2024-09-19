@@ -1,12 +1,11 @@
-<html>
-<head>
-<%=stylesheet_link_tag "register"%>
-</head>
-<h2>Sign up</h2>
 
+<div class="card">
+  <div class="card-header">
+  <h3>Sign up</h3>
+  </div>
+  <div class="card-body">
+    
 
-<div class="form_container">
-<div class="form">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -32,11 +31,12 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-<%= render "devise/shared/links" %>
-</div>
-<div class="image_area">
-<%= image_tag("campx.png", class: "img-fluid", style: "width: 600px; height: 350px; border-radius: 1rem; object-fit: cover") %>
-</div>
+
 </div>
 
-</html>
+
+
+
+
+
+<%= render "devise/shared/links" %>

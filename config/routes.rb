@@ -1,26 +1,25 @@
-Rails.application.routes.draw do
-  namespace :admin do
-      resources :projects
-      resources :users do
-        member do
-          patch :grant_admin
-          patch :revoke_admin
-        end
+  Rails.application.routes.draw do
+    devise_for :users
+    
+    resources :users, only: [:index] do
+      member do
+        patch :set_admin
+        patch :remove_admin
       end
-
-      root to: "projects#index"
     end
-  devise_for :users
-  devise_scope :user do  
-    get '/users/sign_out' => 'devise/sessions#destroy'     
- end
-  resources :projects
-  #get 'home/index'
- #get 'home/about'
-  root 'home#index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
-end
- 
+    resources :projects
+
+    get "home/index"
+
+
+    get "home/about"
+    # root "home#index"
+    root "projects#index"
+
+    get "up" => "rails/health#show", as: :rails_health_check
+
+    get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
+    get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
+
+  end

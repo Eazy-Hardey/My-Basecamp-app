@@ -1,7 +1,5 @@
 class HomeController < ApplicationController
   def index
-  end
-
-  def about
+    @users = User.all if current_user&.admin?
   end
 end
