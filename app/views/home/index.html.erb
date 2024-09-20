@@ -1,16 +1,38 @@
 
 
+# <% if user_signed_in? && current_user.admin? %>
+#   <ul>
+#     <% @users.each do |user| %>
+#       <li>
+#         <%= user.email %>
+#         <% unless user.admin? %>
+#           <%= link_to 'Make Admin', set_admin_user_path(user), data: {turbo_method: :patch} %>
+#         <% else %>
+#           <%= link_to 'Remove Admin', remove_admin_user_path(user), data: {turbo_method: :patch} %>
+#         <% end %>
+#       </li>
+#     <% end %>
+#  </ul>
+# <% end %>
+
 <% if user_signed_in? && current_user.admin? %>
-  <ul>
-    <% @users.each do |user| %>
-      <li>
-        <%= user.email %>
-        <% unless user.admin? %>
-          <%= link_to 'Make Admin', set_admin_user_path(user), data: {turbo_method: :patch} %>
-        <% else %>
-          <%= link_to 'Remove Admin', remove_admin_user_path(user), data: {turbo_method: :patch} %>
-        <% end %>
-      </li>
-    <% end %>
- </ul>
+  <div class="container mt-5">
+    <h2 class="mb-4">Manage Users</h2>
+    <div class="row">
+      <% @users.each do |user| %>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title"><%= user.email %></h5>
+              <% unless user.admin? %>
+                <%= link_to 'Make Admin', set_admin_user_path(user), class: "btn btn-primary", data: { turbo_method: :patch } %>
+              <% else %>
+                <%= link_to 'Remove Admin', remove_admin_user_path(user), class: "btn btn-danger", data: { turbo_method: :patch } %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 <% end %>
