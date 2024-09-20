@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_18_140028) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_08_104106) do
   create_table "projects", force: :cascade do |t|
-    t.string "project_name"
-    t.text "project_discription"
+    t.string "title"
+    t.string "duration"
+    t.string "objective"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
@@ -28,8 +29,10 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_18_140028) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "projects", "users"
 end

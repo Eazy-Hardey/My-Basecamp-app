@@ -1,38 +1,20 @@
-
-
-# <% if user_signed_in? && current_user.admin? %>
-#   <ul>
-#     <% @users.each do |user| %>
-#       <li>
-#         <%= user.email %>
-#         <% unless user.admin? %>
-#           <%= link_to 'Make Admin', set_admin_user_path(user), data: {turbo_method: :patch} %>
-#         <% else %>
-#           <%= link_to 'Remove Admin', remove_admin_user_path(user), data: {turbo_method: :patch} %>
-#         <% end %>
-#       </li>
-#     <% end %>
-#  </ul>
-# <% end %>
-
-<% if user_signed_in? && current_user.admin? %>
-  <div class="container mt-5">
-    <h2 class="mb-4">Manage Users</h2>
-    <div class="row">
-      <% @users.each do |user| %>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title"><%= user.email %></h5>
-              <% unless user.admin? %>
-                <%= link_to 'Make Admin', set_admin_user_path(user), class: "btn btn-primary", data: { turbo_method: :patch } %>
-              <% else %>
-                <%= link_to 'Remove Admin', remove_admin_user_path(user), class: "btn btn-danger", data: { turbo_method: :patch } %>
-              <% end %>
-            </div>
-          </div>
+<!Doctype html>
+<html>
+<head>
+<%=stylesheet_link_tag "home"%>
+</head>
+<body>
+<div class="d-flex flex-column align-items-center justify-content-center">
+         <%= image_tag("camp.png", class: "img-fluid", style: "width: 600px; height: 350px; border-radius: 1rem; object-fit: contain") %>
+<div class="sm mb-3">
+<h1 class="text-center"><b>My Basecamp</b></h1>
+<p>A project management tool for developers</p>
+       
+</div>
+        <div class="nav-item d-flex gap-3 musa">
+                <%= link_to "log in", new_user_session_path, class:"nav-link border border-1"%>
+                <%= link_to "sign up", new_user_registration_path, class:"nav-link border border-1"%>
         </div>
-      <% end %>
-    </div>
-  </div>
-<% end %>
+</div>
+</body>
+</html>

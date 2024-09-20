@@ -1,11 +1,9 @@
-<% content_for :title, "New project" %>
-
-<h1>Add New project</h1>
+<h1>New project</h1>
 
 <%= render "form", project: @project %>
 
 <br>
+
 <div>
-  <%= link_to "Back to projects", projects_path,class:"btn-dark" %>
-  <br>
+  <%= link_to "Back to projects", projects_path %>
 </div>

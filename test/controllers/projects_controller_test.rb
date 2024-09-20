@@ -17,7 +17,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create project" do
     assert_difference("Project.count") do
-      post projects_url, params: { project: { project_discription: @project.project_discription, project_name: @project.project_name } }
+      post projects_url, params: { project: { duration: @project.duration, objective: @project.objective, title: @project.title } }
     end
 
     assert_redirected_to project_url(Project.last)
@@ -34,7 +34,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update project" do
-    patch project_url(@project), params: { project: { project_discription: @project.project_discription, project_name: @project.project_name } }
+    patch project_url(@project), params: { project: { duration: @project.duration, objective: @project.objective, title: @project.title } }
     assert_redirected_to project_url(@project)
   end
 

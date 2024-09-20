@@ -1,12 +1,11 @@
-
-<div class="card">
-  <div class="card-header">
-  <h3>Log in</h3>
-  </div>
-  <div class="card-body">
-   
-
-
+<html>
+<head>
+<%=stylesheet_link_tag "new"%>
+</head>
+<body>
+<h2>Log in</h2>
+<div class="new_container">
+<div class="new_form">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -26,15 +25,15 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in", class: 'btn btn-secondary' %>
+    <%= f.submit "Log in" %>
   </div>
 <% end %>
-  </div>
-</div>
 
-
-
-
-
- <br/>
 <%= render "devise/shared/links" %>
+</div>
+<div class="new_image">
+<%= image_tag("campz.png", class: "img-fluid", style: "width: 600px; height: 350px; border-radius: 1rem; object-fit: cover") %>
+</div>
+</div>
+</body>
+</html>
