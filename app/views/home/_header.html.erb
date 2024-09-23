@@ -1,32 +1,106 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-   <%= link_to 'Basecamp', projects_path, class:"navbar-brand" %>
-   <%# <h1 class="h2"> Basecamp </h1> %>
-  <div class="container-fluid">
-   
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-        <li class="nav-item">
-        <%= link_to "Project", projects_path, class:"nav-link"%>
-        </li>
+# <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+#   <%= link_to "My Basecamp 1", root_path, class:"navbar-brand" %>
+ 
+#   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+#     <span class="navbar-toggler-icon"></span>
+#   </button>
 
-         <li class="nav-item">
-        <%= link_to "Add projects", new_project_path, class:"nav-link"%>
-        </li>
-      </ul>
+#   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+#     <ul class="navbar-nav mr-auto">
+      
+#       <li class="nav-item">
+#       <%= link_to "About Us", home_about_path, class:"nav-link" %>
+       
+
+#       <li class="nav-item">
+#       <%= link_to "Add project", new_project_path, class:"nav-link" %>
+        
+#       </li>
+
+#       <% if user_signed_in? %>
+#       <li class="nav-item">
+#       <%= link_to "Sign Out", destroy_user_session_path, data: {turbo_method: :delete }, class:"nav-link" %>
+        
+#       </li>
+
+
+
+#       <li class="nav-item">
+#       <%= link_to "Edit profile", edit_user_registration_path, class:"nav-link" %>
+        
+#       </li>
+
+#       <% else %>
+
+#       <li class="nav-item">
+#       <%= link_to "Sign Up", new_user_registration_path, class:"nav-link" %>
+        
+#       </li>
+
+
+#       <li class="nav-item">
+#       <%= link_to "Sign In", new_user_session_path,  class:"nav-link" %>
+        
+#       </li>
+#       <% end %>
+
+#     </ul>
+#     <form class="form-inline my-2 my-lg-0">
+#       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+#       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+#     </form>
+#   </div>
+# </nav>
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-lg py-3">
+  <!-- Logo -->
+  <%= link_to "My Basecamp 1", root_path, class: "navbar-brand font-weight-bold text-uppercase" %>
+  
+  <!-- Mobile Toggle Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar Content -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <!-- About Us Link -->
+      <li class="nav-item">
+        <%= link_to "About Us", home_about_path, class: "nav-link text-light" %>
+      </li>
+      
+      <!-- Add Project Link -->
+      <li class="nav-item">
+        <%= link_to "Add Project", new_project_path, class: "nav-link text-light" %>
+      </li>
+
+      <!-- Conditional Links for Authenticated Users -->
       <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link text-light" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link text-light" %>
+        </li>
+      <% else %>
+        <!-- Sign Up & Sign In for Non-Authenticated Users -->
+        <li class="nav-item">
+          <%= link_to "Sign Up", new_user_registration_path, class: "nav-link text-light" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign In", new_user_session_path, class: "nav-link text-light" %>
+        </li>
+      <% end %>
+    </ul>
 
-        <%= link_to "Admin", admin_root_path, class: "nav-link" %>
-       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-      <%= link_to "Log out", destroy_user_session_path, data: { method: :delete }, class: "nav-link" %>
-
-      <%end%>
-    </div>
+    <!-- Search Form -->
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-light" type="submit">Search</button>
+    </form>
   </div>
 </nav>

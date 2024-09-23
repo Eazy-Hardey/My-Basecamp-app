@@ -1,38 +1,79 @@
-<html>
-<body>
-<%= form_with(model: project) do |form| %>
-  <% if project.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+# <%= form_with(model: project) do |form| %>
+#   <% if project.errors.any? %>
+#     <div style="color: red">
+#       <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-      <ul>
-        <% project.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+#       <ul>
+#         <% project.errors.each do |error| %>
+#           <li><%= error.full_message %></li>
+#         <% end %>
+#       </ul>
+#     </div>
+#   <% end %>
+
+#   <div class="field form-group">
+
+#       <%= form.label :project_name, style: "display: block" %>
+#       <%= form.text_field :project_name %>
+
+#   </div>
+   
+#   <div class="field form-group">
+
+#       <%= form.label :project_discription, style: "display: block" %>
+#       <%= form.text_area :project_discription,class:"form-control",placeholder:"project_discription" %>
+
+#   </div>
+
+#   <div class="field form-group">
+
+#        <%= form.number_field :user_id, id: :project_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+     
+#         </div>
+
+
+
+#         <br>
+
+#   <div>
+#       <%= form.submit class:'btn btn-secondary' %>
+#   </div>
+
+# <% end %>
+
+
+<%= form_with(model: project, class: "p-4 shadow-sm bg-white rounded") do |form| %>
+
+    <% if project.errors.any? %>
+      <div class="alert alert-danger">
+        <h5><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h5>
+        <ul>
+          <% project.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <!-- Project Name Field -->
+    <div class="mb-3">
+      <%= form.label :project_name, "Project Name", class: "form-label" %>
+      <%= form.text_field :project_name, class: "form-control", placeholder: "Enter project name" %>
     </div>
+  
+    <!-- Project Description Field -->
+    <div class="mb-3">
+      <%= form.label :project_discription, "Project Description", class: "form-label" %>
+      <%= form.text_area :project_discription, class: "form-control", rows: 5, placeholder: "Describe the project" %>
+    </div>
+  
+    <!-- Hidden User ID Field -->
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  
+    <!-- Submit Button -->
+    <div class="d-grid">
+      <%= form.submit "Save Project", class: "btn btn-primary" %>
+    </div>
+  
   <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :duration, style: "display: block" %>
-    <%= form.text_field :duration %>
-  </div>
-
-  <div class="a_form">
-    <%= form.label :objective, style: "display: block" %>
-    <%= form.text_field :objective %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
-<style>
-</style>
-</body>
-</html>
+  
