@@ -4,17 +4,17 @@ body{
 }
 
 .musa a{
-  background-color: rgb(18, 125, 158);
+  background-color: rgb(6, 65, 6);
   color: white;
   border-radius: 3px;
   font-weight: 600;
 }
 .musa a:nth-child(2){
-  background-color: rgb(15, 101, 151);
+  background-color: rgb(8, 30, 78);
   color: white;
 }
 .musa a:hover{
-  color: rgb(6, 65, 6);
+  color: rgb(236, 241, 158);
   background-color: white;
   border: 1px solid rgb(6, 65, 6);
 }

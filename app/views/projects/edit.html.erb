@@ -1,37 +1,49 @@
-# <% content_for :title, "Editing project" %>
+<html>
+<head>
+</head>
+<body>
+<h2>Edit project</h2>
 
-# <h1>Editing project</h1>
-# <br/>
-# <%= render "form", project: @project %>
+<%= render "form", project: @project %>
 
-# <br/>
+<br>
 
-# <div>
-#  <%= link_to "Show this project", @project,class:"btn btn-secondary" %> | 
-  
-#    <%= button_to "Destroy this project", @project, method: :delete,class:"btn btn-danger" %> 
-#   <br/>
-   
-#   <%= link_to "Back to projects", projects_path,class:"btn btn-dark" %>
-#   <br/>
-#   </div>
-
-
-
-<% content_for :title, "Editing Project" %>
-
-<div class="container py-5">
-  <h1 class="text-center mb-4">Editing Project</h1>
-  
-  <!-- Render the form partial for project -->
-  <div class="card shadow-sm p-4 mb-4">
-    <%= render "form", project: @project %>
-  </div>
-
-  <!-- Links for showing, destroying, and navigating back -->
-  <div class="d-flex justify-content-center mt-4 gap-3">
-    <%= link_to "Show this project", @project, class: "btn btn-info text-white" %> 
-    <%= button_to "Destroy this project", @project, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-    <%= link_to "Back to projects", projects_path, class: "btn btn-dark" %>
-  </div>
+<div class="bottom_links">
+  <%= link_to "Show this project", @project %> |
+  <%= link_to "Back to projects", projects_path %>
 </div>
+<style>
+  .bottom_links a{
+    text-decoration: none;
+    color: white;
+    border: 1px solid grey;
+    padding: 4px;
+    background-color: green;
+    border: none;
+    transition: all;
+    transition-timing-function: ease;
+    transition-duration: 400ms;
+  }
+  .bottom_links a:nth-child(2){
+    background-color: blue;
+  }
+  .bottom_links a:nth-child(2):hover{
+    background-color: white;
+    border: 1px solid blue;
+    color: blue;
+  }
+  .bottom_links a:nth-child(1):hover{
+    background-color: white;
+    border: 1px solid green;
+    color: green;
+  }
+   .bottom_links a:hover{
+    color: blue;
+   }
+   /* button{
+    margin-top: 10px;
+    border: none;
+   } */
+</style>
+</body>
+</html>
